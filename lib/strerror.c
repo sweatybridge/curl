@@ -218,10 +218,6 @@ curl_easy_strerror(CURLcode error)
   case CURLE_SSL_CIPHER:
     return "Couldn't use specified SSL cipher";
 
-  case CURLE_SSL_CACERT:
-    return "Peer certificate cannot be authenticated with given CA "
-      "certificates";
-
   case CURLE_SSL_CACERT_BADFILE:
     return "Problem with the SSL CA cert (path? access rights?)";
 
@@ -324,6 +320,7 @@ curl_easy_strerror(CURLcode error)
   case CURLE_OBSOLETE44:
   case CURLE_OBSOLETE46:
   case CURLE_OBSOLETE50:
+  case CURLE_OBSOLETE51:
   case CURLE_OBSOLETE57:
   case CURL_LAST:
     break;
