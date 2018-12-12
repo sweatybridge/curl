@@ -4121,8 +4121,8 @@ CURLcode Curl_setup_conn(struct connectdata *conn,
       return result;
   }
   else {
-    Curl_pgrsTime(data, TIMER_CONNECT);    /* we're connected already */
-    Curl_pgrsTime(data, TIMER_APPCONNECT); /* we're connected already */
+    data->progress.t_connect = 0;    /* we're connected already */
+    data->progress.t_appconnect = 0; /* we're connected already */
     conn->bits.tcpconnect[FIRSTSOCKET] = TRUE;
     *protocol_done = TRUE;
     Curl_updateconninfo(conn, conn->sock[FIRSTSOCKET]);
